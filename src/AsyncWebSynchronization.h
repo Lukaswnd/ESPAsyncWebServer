@@ -26,10 +26,10 @@ public:
   }
 
   bool lock() const {
-    extern void *pxCurrentTCB;
-    if (_lockedBy != pxCurrentTCB) {
+    void *_pxCurrentTCB = xTaskGetCurrentTaskHandle();
+    if (_lockedBy != _pxCurrentTCB) {
       xSemaphoreTake(_lock, portMAX_DELAY);
-      _lockedBy = pxCurrentTCB;
+      _lockedBy = _pxCurrentTCB;
       return true;
     }
     return false;
