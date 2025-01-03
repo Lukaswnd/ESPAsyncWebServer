@@ -24,10 +24,8 @@
       "platforms": "espressif8266"
     },
     {
-      "owner": "lukaswnd",      
       "name": "AsyncTCP",
-      "version": "^1.1.1",
-      "platforms": "espressif32"
+      "version":  "https://github.com/lukaswnd/AsyncTCP.git"
     },
     {
       "name": "Hash",
